@@ -1,0 +1,3028 @@
+{
+  "$schema": "./canonical_labels.schema.json",
+  "version": "1.0.0",
+  "description": "Rotulos canonicos para os tipos de mensagem de um sistema ERP + CRM + E-commerce + Agendamento + Assistente pessoal + Personal shopper + Delivery + Taxi + Saude. O campo emoji e preenchido por scripts/fill-emojis.ts a partir do emojidb.org.",
+  "emoji_source": "https://emojidb.org/{canonical_label}-emojis?utm_source=user_search",
+  "modules": [
+    "assistant",
+    "core",
+    "crm",
+    "delivery",
+    "ecommerce",
+    "erp",
+    "health",
+    "personal_shopper",
+    "scheduling",
+    "taxi"
+  ],
+  "labels": {
+    "login_success": {
+      "description": "Autenticação concluída com sucesso.",
+      "modules": [
+        "core"
+      ],
+      "synonyms": [
+        "entrar",
+        "sign in",
+        "acesso liberado",
+        "autenticado"
+      ],
+      "emoji": []
+    },
+    "login_failed": {
+      "description": "Credenciais inválidas na tentativa de acesso.",
+      "modules": [
+        "core"
+      ],
+      "synonyms": [
+        "senha incorreta",
+        "acesso negado",
+        "falha no login"
+      ],
+      "emoji": []
+    },
+    "logout": {
+      "description": "Sessão encerrada pelo próprio usuário.",
+      "modules": [
+        "core"
+      ],
+      "synonyms": [
+        "sair",
+        "desconectar",
+        "encerrar sessao"
+      ],
+      "emoji": []
+    },
+    "session_expired": {
+      "description": "Sessão expirou por inatividade e exige novo login.",
+      "modules": [
+        "core"
+      ],
+      "synonyms": [
+        "sessao encerrada",
+        "timeout",
+        "reautenticar"
+      ],
+      "emoji": []
+    },
+    "two_factor_required": {
+      "description": "Segundo fator de autenticação necessário para prosseguir.",
+      "modules": [
+        "core"
+      ],
+      "synonyms": [
+        "2fa",
+        "codigo de verificacao",
+        "autenticacao em duas etapas"
+      ],
+      "emoji": []
+    },
+    "password_changed": {
+      "description": "Senha alterada com sucesso.",
+      "modules": [
+        "core"
+      ],
+      "synonyms": [
+        "troca de senha",
+        "nova senha",
+        "credencial atualizada"
+      ],
+      "emoji": []
+    },
+    "password_reset_requested": {
+      "description": "Link de redefinição de senha enviado ao usuário.",
+      "modules": [
+        "core"
+      ],
+      "synonyms": [
+        "esqueci minha senha",
+        "recuperar acesso",
+        "reset de senha"
+      ],
+      "emoji": []
+    },
+    "account_created": {
+      "description": "Nova conta registrada no sistema.",
+      "modules": [
+        "core",
+        "crm"
+      ],
+      "synonyms": [
+        "cadastro realizado",
+        "novo usuario",
+        "conta aberta"
+      ],
+      "emoji": []
+    },
+    "account_verified": {
+      "description": "E-mail ou telefone da conta confirmado.",
+      "modules": [
+        "core"
+      ],
+      "synonyms": [
+        "email confirmado",
+        "verificacao concluida",
+        "conta validada"
+      ],
+      "emoji": []
+    },
+    "account_locked": {
+      "description": "Conta bloqueada por segurança após tentativas suspeitas.",
+      "modules": [
+        "core"
+      ],
+      "synonyms": [
+        "conta suspensa",
+        "bloqueio de seguranca",
+        "acesso travado"
+      ],
+      "emoji": []
+    },
+    "account_deleted": {
+      "description": "Conta encerrada e dados removidos conforme política.",
+      "modules": [
+        "core"
+      ],
+      "synonyms": [
+        "exclusao de conta",
+        "cancelamento de cadastro",
+        "direito ao esquecimento"
+      ],
+      "emoji": []
+    },
+    "permission_denied": {
+      "description": "Usuário sem autorização para a ação solicitada.",
+      "modules": [
+        "core"
+      ],
+      "synonyms": [
+        "sem permissao",
+        "acesso restrito",
+        "nao autorizado"
+      ],
+      "emoji": []
+    },
+    "profile_updated": {
+      "description": "Dados cadastrais do perfil alterados.",
+      "modules": [
+        "core",
+        "crm"
+      ],
+      "synonyms": [
+        "perfil editado",
+        "dados atualizados",
+        "cadastro alterado"
+      ],
+      "emoji": []
+    },
+    "settings_saved": {
+      "description": "Preferências e configurações gravadas.",
+      "modules": [
+        "core"
+      ],
+      "synonyms": [
+        "configuracao salva",
+        "preferencias aplicadas",
+        "ajustes gravados"
+      ],
+      "emoji": []
+    },
+    "privacy_consent_required": {
+      "description": "Consentimento de privacidade pendente para uso dos dados.",
+      "modules": [
+        "core",
+        "health"
+      ],
+      "synonyms": [
+        "lgpd",
+        "aceite de privacidade",
+        "consentimento de dados"
+      ],
+      "emoji": []
+    },
+    "terms_updated": {
+      "description": "Termos de uso ou política revisados e republicados.",
+      "modules": [
+        "core"
+      ],
+      "synonyms": [
+        "novos termos",
+        "politica atualizada",
+        "contrato de uso"
+      ],
+      "emoji": []
+    },
+    "audit_log_entry": {
+      "description": "Ação sensível registrada na trilha de auditoria.",
+      "modules": [
+        "core",
+        "erp"
+      ],
+      "synonyms": [
+        "log de auditoria",
+        "rastreabilidade",
+        "registro de acesso"
+      ],
+      "emoji": []
+    },
+    "security_alert": {
+      "description": "Atividade suspeita detectada na conta ou no ambiente.",
+      "modules": [
+        "core",
+        "health"
+      ],
+      "synonyms": [
+        "alerta de seguranca",
+        "acesso suspeito",
+        "incidente"
+      ],
+      "emoji": []
+    },
+    "system_online": {
+      "description": "Serviço disponível e operando normalmente.",
+      "modules": [
+        "core"
+      ],
+      "synonyms": [
+        "sistema no ar",
+        "operacional",
+        "disponivel"
+      ],
+      "emoji": []
+    },
+    "system_offline": {
+      "description": "Serviço indisponível por falha ou parada.",
+      "modules": [
+        "core"
+      ],
+      "synonyms": [
+        "fora do ar",
+        "indisponivel",
+        "queda do sistema"
+      ],
+      "emoji": []
+    },
+    "maintenance_scheduled": {
+      "description": "Janela de manutenção programada e comunicada.",
+      "modules": [
+        "core"
+      ],
+      "synonyms": [
+        "manutencao programada",
+        "parada planejada",
+        "janela de manutencao"
+      ],
+      "emoji": []
+    },
+    "deploy_completed": {
+      "description": "Nova versão publicada em produção.",
+      "modules": [
+        "core"
+      ],
+      "synonyms": [
+        "atualizacao publicada",
+        "nova versao",
+        "release"
+      ],
+      "emoji": []
+    },
+    "backup_completed": {
+      "description": "Cópia de segurança concluída com sucesso.",
+      "modules": [
+        "core"
+      ],
+      "synonyms": [
+        "backup realizado",
+        "copia de seguranca",
+        "salvaguarda"
+      ],
+      "emoji": []
+    },
+    "backup_failed": {
+      "description": "Rotina de backup falhou e exige intervenção.",
+      "modules": [
+        "core"
+      ],
+      "synonyms": [
+        "falha no backup",
+        "copia nao concluida"
+      ],
+      "emoji": []
+    },
+    "sync_started": {
+      "description": "Sincronização entre sistemas iniciada.",
+      "modules": [
+        "core",
+        "ecommerce",
+        "erp"
+      ],
+      "synonyms": [
+        "sincronizacao iniciada",
+        "integracao rodando"
+      ],
+      "emoji": []
+    },
+    "sync_completed": {
+      "description": "Sincronização concluída sem divergências.",
+      "modules": [
+        "core",
+        "ecommerce",
+        "erp"
+      ],
+      "synonyms": [
+        "sincronizado",
+        "integracao concluida"
+      ],
+      "emoji": []
+    },
+    "sync_failed": {
+      "description": "Sincronização interrompida por erro de integração.",
+      "modules": [
+        "core",
+        "ecommerce",
+        "erp"
+      ],
+      "synonyms": [
+        "falha na sincronizacao",
+        "erro de integracao"
+      ],
+      "emoji": []
+    },
+    "import_completed": {
+      "description": "Importação de dados finalizada.",
+      "modules": [
+        "core",
+        "erp"
+      ],
+      "synonyms": [
+        "carga concluida",
+        "planilha importada",
+        "dados carregados"
+      ],
+      "emoji": []
+    },
+    "export_ready": {
+      "description": "Arquivo de exportação pronto para download.",
+      "modules": [
+        "core",
+        "erp"
+      ],
+      "synonyms": [
+        "exportacao pronta",
+        "download disponivel",
+        "relatorio gerado"
+      ],
+      "emoji": []
+    },
+    "validation_error": {
+      "description": "Dados informados não passaram na validação do formulário.",
+      "modules": [
+        "core"
+      ],
+      "synonyms": [
+        "campo invalido",
+        "erro de preenchimento",
+        "dados incorretos"
+      ],
+      "emoji": []
+    },
+    "network_error": {
+      "description": "Falha de comunicação com o servidor ou serviço externo.",
+      "modules": [
+        "core"
+      ],
+      "synonyms": [
+        "sem conexao",
+        "erro de rede",
+        "offline"
+      ],
+      "emoji": []
+    },
+    "unknown_error": {
+      "description": "Erro inesperado sem tratamento específico.",
+      "modules": [
+        "core"
+      ],
+      "synonyms": [
+        "erro desconhecido",
+        "falha inesperada",
+        "erro generico"
+      ],
+      "emoji": []
+    },
+    "rate_limit_reached": {
+      "description": "Limite de requisições da API atingido.",
+      "modules": [
+        "core"
+      ],
+      "synonyms": [
+        "muitas requisicoes",
+        "limite de chamadas",
+        "throttling"
+      ],
+      "emoji": []
+    },
+    "quota_exceeded": {
+      "description": "Cota contratada do plano esgotada.",
+      "modules": [
+        "core"
+      ],
+      "synonyms": [
+        "limite do plano",
+        "cota estourada",
+        "upgrade necessario"
+      ],
+      "emoji": []
+    },
+    "feature_unavailable": {
+      "description": "Recurso indisponível no plano ou na região atual.",
+      "modules": [
+        "core"
+      ],
+      "synonyms": [
+        "indisponivel no plano",
+        "recurso bloqueado",
+        "em breve"
+      ],
+      "emoji": []
+    },
+    "search_no_results": {
+      "description": "Busca não encontrou nenhum registro correspondente.",
+      "modules": [
+        "core",
+        "ecommerce"
+      ],
+      "synonyms": [
+        "nenhum resultado",
+        "nada encontrado",
+        "busca vazia"
+      ],
+      "emoji": []
+    },
+    "data_export_ready": {
+      "description": "Pacote com os dados pessoais do titular disponível.",
+      "modules": [
+        "core",
+        "health"
+      ],
+      "synonyms": [
+        "portabilidade de dados",
+        "meus dados",
+        "exportar cadastro"
+      ],
+      "emoji": []
+    },
+    "record_created": {
+      "description": "Novo registro incluído na base.",
+      "modules": [
+        "core",
+        "erp",
+        "crm"
+      ],
+      "synonyms": [
+        "cadastro criado",
+        "novo item",
+        "incluido"
+      ],
+      "emoji": []
+    },
+    "record_updated": {
+      "description": "Registro existente alterado.",
+      "modules": [
+        "core",
+        "erp",
+        "crm"
+      ],
+      "synonyms": [
+        "editado",
+        "alterado",
+        "atualizado"
+      ],
+      "emoji": []
+    },
+    "record_deleted": {
+      "description": "Registro removido definitivamente.",
+      "modules": [
+        "core",
+        "erp",
+        "crm"
+      ],
+      "synonyms": [
+        "excluido",
+        "apagado",
+        "removido"
+      ],
+      "emoji": []
+    },
+    "record_restored": {
+      "description": "Registro recuperado da lixeira ou de um backup.",
+      "modules": [
+        "core",
+        "erp"
+      ],
+      "synonyms": [
+        "restaurado",
+        "recuperado",
+        "desfazer exclusao"
+      ],
+      "emoji": []
+    },
+    "record_archived": {
+      "description": "Registro arquivado e retirado das listagens ativas.",
+      "modules": [
+        "core",
+        "erp",
+        "crm"
+      ],
+      "synonyms": [
+        "arquivado",
+        "inativado",
+        "historico"
+      ],
+      "emoji": []
+    },
+    "record_duplicated": {
+      "description": "Cópia de um registro existente criada.",
+      "modules": [
+        "core",
+        "erp"
+      ],
+      "synonyms": [
+        "duplicado",
+        "clonado",
+        "copia"
+      ],
+      "emoji": []
+    },
+    "bulk_action_completed": {
+      "description": "Ação em lote aplicada a vários registros.",
+      "modules": [
+        "core",
+        "erp"
+      ],
+      "synonyms": [
+        "acao em massa",
+        "lote processado",
+        "selecao aplicada"
+      ],
+      "emoji": []
+    },
+    "unsaved_changes": {
+      "description": "Existem alterações não gravadas no formulário.",
+      "modules": [
+        "core"
+      ],
+      "synonyms": [
+        "nao salvo",
+        "rascunho",
+        "alteracoes pendentes"
+      ],
+      "emoji": []
+    },
+    "approval_requested": {
+      "description": "Solicitação enviada para a alçada responsável.",
+      "modules": [
+        "core",
+        "erp",
+        "crm"
+      ],
+      "synonyms": [
+        "aguardando aprovacao",
+        "enviado para aprovacao",
+        "alcada"
+      ],
+      "emoji": []
+    },
+    "approval_granted": {
+      "description": "Solicitação aprovada pelo responsável.",
+      "modules": [
+        "core",
+        "erp"
+      ],
+      "synonyms": [
+        "aprovado",
+        "autorizado",
+        "liberado"
+      ],
+      "emoji": []
+    },
+    "approval_rejected": {
+      "description": "Solicitação recusada pelo responsável.",
+      "modules": [
+        "core",
+        "erp"
+      ],
+      "synonyms": [
+        "reprovado",
+        "recusado",
+        "negado"
+      ],
+      "emoji": []
+    },
+    "task_assigned": {
+      "description": "Tarefa atribuída a um responsável.",
+      "modules": [
+        "core",
+        "crm",
+        "assistant"
+      ],
+      "synonyms": [
+        "designado",
+        "responsavel definido",
+        "atribuido"
+      ],
+      "emoji": []
+    },
+    "task_completed": {
+      "description": "Tarefa concluída.",
+      "modules": [
+        "core",
+        "crm",
+        "assistant"
+      ],
+      "synonyms": [
+        "concluido",
+        "finalizado",
+        "feito"
+      ],
+      "emoji": []
+    },
+    "task_overdue": {
+      "description": "Tarefa passou do prazo sem conclusão.",
+      "modules": [
+        "core",
+        "crm",
+        "assistant"
+      ],
+      "synonyms": [
+        "atrasado",
+        "vencido",
+        "prazo estourado da tarefa"
+      ],
+      "emoji": []
+    },
+    "escalation_triggered": {
+      "description": "Caso escalado para um nível superior de atendimento.",
+      "modules": [
+        "core",
+        "crm"
+      ],
+      "synonyms": [
+        "escalonamento",
+        "prioridade elevada",
+        "segundo nivel"
+      ],
+      "emoji": []
+    },
+    "workflow_started": {
+      "description": "Fluxo de trabalho automatizado iniciado.",
+      "modules": [
+        "core",
+        "erp",
+        "crm"
+      ],
+      "synonyms": [
+        "processo iniciado",
+        "automacao disparada",
+        "esteira"
+      ],
+      "emoji": []
+    },
+    "stock_low": {
+      "description": "Saldo do item abaixo do estoque mínimo definido.",
+      "modules": [
+        "erp",
+        "ecommerce"
+      ],
+      "synonyms": [
+        "estoque baixo",
+        "abaixo do minimo",
+        "reposicao necessaria"
+      ],
+      "emoji": []
+    },
+    "stock_out": {
+      "description": "Item sem saldo disponível para venda.",
+      "modules": [
+        "erp",
+        "ecommerce"
+      ],
+      "synonyms": [
+        "sem estoque",
+        "esgotado",
+        "ruptura"
+      ],
+      "emoji": []
+    },
+    "stock_replenished": {
+      "description": "Estoque reabastecido após entrada de mercadoria.",
+      "modules": [
+        "erp"
+      ],
+      "synonyms": [
+        "reposto",
+        "reabastecido",
+        "entrada de estoque"
+      ],
+      "emoji": []
+    },
+    "inventory_count_started": {
+      "description": "Contagem de inventário aberta para o depósito.",
+      "modules": [
+        "erp"
+      ],
+      "synonyms": [
+        "inventario iniciado",
+        "balanco de estoque",
+        "contagem"
+      ],
+      "emoji": []
+    },
+    "inventory_discrepancy": {
+      "description": "Divergência entre saldo do sistema e contagem física.",
+      "modules": [
+        "erp"
+      ],
+      "synonyms": [
+        "divergencia de estoque",
+        "quebra",
+        "diferenca de inventario"
+      ],
+      "emoji": []
+    },
+    "goods_received": {
+      "description": "Mercadoria recebida e conferida no depósito.",
+      "modules": [
+        "erp"
+      ],
+      "synonyms": [
+        "recebimento de mercadoria",
+        "entrada de nota",
+        "conferencia"
+      ],
+      "emoji": []
+    },
+    "warehouse_transfer": {
+      "description": "Transferência de itens entre depósitos ou filiais.",
+      "modules": [
+        "erp"
+      ],
+      "synonyms": [
+        "transferencia",
+        "remanejamento",
+        "movimentacao interna"
+      ],
+      "emoji": []
+    },
+    "batch_expiring": {
+      "description": "Lote com validade próxima do vencimento.",
+      "modules": [
+        "erp",
+        "health"
+      ],
+      "synonyms": [
+        "lote vencendo",
+        "validade proxima",
+        "perecivel"
+      ],
+      "emoji": []
+    },
+    "return_to_supplier": {
+      "description": "Devolução de mercadoria ao fornecedor.",
+      "modules": [
+        "erp"
+      ],
+      "synonyms": [
+        "devolucao ao fornecedor",
+        "recusa de mercadoria"
+      ],
+      "emoji": []
+    },
+    "product_created": {
+      "description": "Novo produto cadastrado no catálogo.",
+      "modules": [
+        "erp",
+        "ecommerce"
+      ],
+      "synonyms": [
+        "produto cadastrado",
+        "novo sku",
+        "item criado"
+      ],
+      "emoji": []
+    },
+    "product_discontinued": {
+      "description": "Produto descontinuado e retirado do catálogo ativo.",
+      "modules": [
+        "erp",
+        "ecommerce"
+      ],
+      "synonyms": [
+        "fora de linha",
+        "descontinuado",
+        "produto inativo"
+      ],
+      "emoji": []
+    },
+    "price_updated": {
+      "description": "Preço de venda do item alterado.",
+      "modules": [
+        "erp",
+        "ecommerce"
+      ],
+      "synonyms": [
+        "preco alterado",
+        "tabela de precos",
+        "reajuste"
+      ],
+      "emoji": []
+    },
+    "purchase_order_created": {
+      "description": "Pedido de compra aberto para um fornecedor.",
+      "modules": [
+        "erp"
+      ],
+      "synonyms": [
+        "pedido de compra",
+        "ordem de compra",
+        "requisicao"
+      ],
+      "emoji": []
+    },
+    "purchase_order_approved": {
+      "description": "Pedido de compra liberado pela alçada.",
+      "modules": [
+        "erp"
+      ],
+      "synonyms": [
+        "pedido de compra aprovado",
+        "oc aprovada"
+      ],
+      "emoji": []
+    },
+    "purchase_order_sent": {
+      "description": "Pedido de compra enviado ao fornecedor.",
+      "modules": [
+        "erp"
+      ],
+      "synonyms": [
+        "oc enviada",
+        "compra transmitida"
+      ],
+      "emoji": []
+    },
+    "quote_requested": {
+      "description": "Cotação solicitada a um ou mais fornecedores.",
+      "modules": [
+        "erp"
+      ],
+      "synonyms": [
+        "cotacao",
+        "pedido de orcamento",
+        "tomada de preco"
+      ],
+      "emoji": []
+    },
+    "supplier_registered": {
+      "description": "Novo fornecedor homologado e cadastrado.",
+      "modules": [
+        "erp"
+      ],
+      "synonyms": [
+        "fornecedor cadastrado",
+        "homologacao",
+        "novo parceiro"
+      ],
+      "emoji": []
+    },
+    "supplier_delayed": {
+      "description": "Fornecedor atrasou a entrega acordada.",
+      "modules": [
+        "erp"
+      ],
+      "synonyms": [
+        "atraso do fornecedor",
+        "atraso na entrega do fornecedor",
+        "prazo estourado"
+      ],
+      "emoji": []
+    },
+    "invoice_issued": {
+      "description": "Fatura emitida para o cliente.",
+      "modules": [
+        "erp",
+        "ecommerce"
+      ],
+      "synonyms": [
+        "fatura emitida",
+        "cobranca gerada",
+        "boleto emitido"
+      ],
+      "emoji": []
+    },
+    "invoice_paid": {
+      "description": "Fatura quitada integralmente.",
+      "modules": [
+        "erp",
+        "ecommerce"
+      ],
+      "synonyms": [
+        "fatura paga",
+        "titulo baixado",
+        "quitado"
+      ],
+      "emoji": []
+    },
+    "invoice_overdue": {
+      "description": "Fatura vencida e ainda em aberto.",
+      "modules": [
+        "erp",
+        "ecommerce"
+      ],
+      "synonyms": [
+        "fatura vencida",
+        "inadimplencia",
+        "titulo em atraso"
+      ],
+      "emoji": []
+    },
+    "invoice_cancelled": {
+      "description": "Fatura cancelada antes ou depois da emissão.",
+      "modules": [
+        "erp"
+      ],
+      "synonyms": [
+        "fatura cancelada",
+        "cobranca estornada"
+      ],
+      "emoji": []
+    },
+    "payment_received": {
+      "description": "Pagamento confirmado e conciliado.",
+      "modules": [
+        "erp",
+        "ecommerce",
+        "delivery",
+        "taxi"
+      ],
+      "synonyms": [
+        "pagamento recebido",
+        "credito confirmado",
+        "recebimento"
+      ],
+      "emoji": []
+    },
+    "payment_failed": {
+      "description": "Cobrança recusada pela operadora ou pelo banco.",
+      "modules": [
+        "erp",
+        "ecommerce",
+        "taxi"
+      ],
+      "synonyms": [
+        "pagamento recusado",
+        "cartao negado",
+        "falha no pagamento"
+      ],
+      "emoji": []
+    },
+    "payment_pending": {
+      "description": "Pagamento aguardando compensação ou confirmação.",
+      "modules": [
+        "erp",
+        "ecommerce"
+      ],
+      "synonyms": [
+        "aguardando pagamento",
+        "em compensacao",
+        "pix pendente"
+      ],
+      "emoji": []
+    },
+    "payment_refunded": {
+      "description": "Valor devolvido ao pagador.",
+      "modules": [
+        "erp",
+        "ecommerce",
+        "delivery"
+      ],
+      "synonyms": [
+        "estorno",
+        "reembolso",
+        "devolucao de valor"
+      ],
+      "emoji": []
+    },
+    "installment_due": {
+      "description": "Parcela de um parcelamento próxima do vencimento.",
+      "modules": [
+        "erp",
+        "ecommerce"
+      ],
+      "synonyms": [
+        "parcela a vencer",
+        "prestacao",
+        "carne"
+      ],
+      "emoji": []
+    },
+    "credit_limit_exceeded": {
+      "description": "Cliente ultrapassou o limite de crédito concedido.",
+      "modules": [
+        "erp",
+        "crm"
+      ],
+      "synonyms": [
+        "limite de credito",
+        "bloqueio de credito",
+        "credito estourado"
+      ],
+      "emoji": []
+    },
+    "cash_flow_negative": {
+      "description": "Projeção de caixa aponta saldo negativo no período.",
+      "modules": [
+        "erp",
+        "assistant"
+      ],
+      "synonyms": [
+        "caixa negativo",
+        "fluxo de caixa",
+        "saldo insuficiente"
+      ],
+      "emoji": []
+    },
+    "bank_reconciliation_pending": {
+      "description": "Lançamentos bancários sem correspondência no sistema.",
+      "modules": [
+        "erp"
+      ],
+      "synonyms": [
+        "conciliacao pendente",
+        "extrato divergente"
+      ],
+      "emoji": []
+    },
+    "expense_recorded": {
+      "description": "Despesa lançada no contas a pagar.",
+      "modules": [
+        "erp",
+        "assistant"
+      ],
+      "synonyms": [
+        "despesa lancada",
+        "gasto registrado",
+        "conta a pagar"
+      ],
+      "emoji": []
+    },
+    "budget_exceeded": {
+      "description": "Orçamento da categoria ou do centro de custo estourado.",
+      "modules": [
+        "erp",
+        "assistant"
+      ],
+      "synonyms": [
+        "orcamento estourado",
+        "verba excedida",
+        "acima do previsto"
+      ],
+      "emoji": []
+    },
+    "commission_calculated": {
+      "description": "Comissão do vendedor apurada no fechamento.",
+      "modules": [
+        "erp",
+        "crm"
+      ],
+      "synonyms": [
+        "comissao apurada",
+        "premiacao",
+        "remuneracao variavel"
+      ],
+      "emoji": []
+    },
+    "financial_report_ready": {
+      "description": "Relatório financeiro consolidado disponível.",
+      "modules": [
+        "erp"
+      ],
+      "synonyms": [
+        "dre",
+        "balancete",
+        "relatorio financeiro"
+      ],
+      "emoji": []
+    },
+    "tax_document_issued": {
+      "description": "Documento fiscal autorizado pelo fisco.",
+      "modules": [
+        "erp",
+        "ecommerce"
+      ],
+      "synonyms": [
+        "nota fiscal emitida",
+        "nfe autorizada",
+        "cupom fiscal"
+      ],
+      "emoji": []
+    },
+    "tax_document_rejected": {
+      "description": "Documento fiscal rejeitado pela SEFAZ.",
+      "modules": [
+        "erp"
+      ],
+      "synonyms": [
+        "nota rejeitada",
+        "erro na nfe",
+        "rejeicao fiscal"
+      ],
+      "emoji": []
+    },
+    "tax_document_cancelled": {
+      "description": "Documento fiscal cancelado dentro do prazo legal.",
+      "modules": [
+        "erp"
+      ],
+      "synonyms": [
+        "nota cancelada",
+        "cancelamento de nfe"
+      ],
+      "emoji": []
+    },
+    "tax_obligation_due": {
+      "description": "Obrigação acessória ou tributo a vencer.",
+      "modules": [
+        "erp"
+      ],
+      "synonyms": [
+        "imposto a vencer",
+        "obrigacao fiscal",
+        "guia a pagar"
+      ],
+      "emoji": []
+    },
+    "fiscal_period_closed": {
+      "description": "Competência contábil encerrada e travada.",
+      "modules": [
+        "erp"
+      ],
+      "synonyms": [
+        "fechamento contabil",
+        "competencia fechada",
+        "periodo travado"
+      ],
+      "emoji": []
+    },
+    "employee_hired": {
+      "description": "Colaborador admitido e integrado ao quadro.",
+      "modules": [
+        "erp"
+      ],
+      "synonyms": [
+        "admissao",
+        "contratacao",
+        "novo colaborador"
+      ],
+      "emoji": []
+    },
+    "employee_terminated": {
+      "description": "Desligamento de colaborador registrado.",
+      "modules": [
+        "erp"
+      ],
+      "synonyms": [
+        "demissao",
+        "desligamento",
+        "rescisao"
+      ],
+      "emoji": []
+    },
+    "payroll_processed": {
+      "description": "Folha de pagamento fechada e processada.",
+      "modules": [
+        "erp"
+      ],
+      "synonyms": [
+        "folha processada",
+        "holerite",
+        "pagamento de salarios"
+      ],
+      "emoji": []
+    },
+    "vacation_requested": {
+      "description": "Pedido de férias enviado para aprovação.",
+      "modules": [
+        "erp"
+      ],
+      "synonyms": [
+        "solicitacao de ferias",
+        "pedido de folga"
+      ],
+      "emoji": []
+    },
+    "vacation_approved": {
+      "description": "Férias aprovadas e agendadas.",
+      "modules": [
+        "erp"
+      ],
+      "synonyms": [
+        "ferias aprovadas",
+        "folga concedida"
+      ],
+      "emoji": []
+    },
+    "timesheet_missing": {
+      "description": "Registro de ponto ausente ou inconsistente.",
+      "modules": [
+        "erp"
+      ],
+      "synonyms": [
+        "ponto pendente",
+        "falta de marcacao",
+        "folha de ponto"
+      ],
+      "emoji": []
+    },
+    "shift_scheduled": {
+      "description": "Escala de trabalho publicada para a equipe.",
+      "modules": [
+        "erp",
+        "health",
+        "delivery"
+      ],
+      "synonyms": [
+        "escala publicada",
+        "turno definido",
+        "jornada"
+      ],
+      "emoji": []
+    },
+    "training_assigned": {
+      "description": "Treinamento obrigatório atribuído ao colaborador.",
+      "modules": [
+        "erp"
+      ],
+      "synonyms": [
+        "treinamento designado",
+        "capacitacao",
+        "curso obrigatorio"
+      ],
+      "emoji": []
+    },
+    "lead_captured": {
+      "description": "Novo lead entrou pelo formulário, campanha ou indicação.",
+      "modules": [
+        "crm"
+      ],
+      "synonyms": [
+        "novo lead",
+        "contato capturado",
+        "oportunidade de entrada"
+      ],
+      "emoji": []
+    },
+    "lead_qualified": {
+      "description": "Lead atendeu aos critérios de qualificação.",
+      "modules": [
+        "crm"
+      ],
+      "synonyms": [
+        "lead qualificado",
+        "mql",
+        "sql"
+      ],
+      "emoji": []
+    },
+    "lead_lost": {
+      "description": "Lead descartado por desinteresse ou perfil incompatível.",
+      "modules": [
+        "crm"
+      ],
+      "synonyms": [
+        "lead perdido",
+        "descartado",
+        "sem fit"
+      ],
+      "emoji": []
+    },
+    "opportunity_created": {
+      "description": "Oportunidade de negócio aberta no funil.",
+      "modules": [
+        "crm"
+      ],
+      "synonyms": [
+        "negocio criado",
+        "oportunidade",
+        "proposta em aberto"
+      ],
+      "emoji": []
+    },
+    "deal_stage_changed": {
+      "description": "Negócio avançou ou retrocedeu de etapa no funil.",
+      "modules": [
+        "crm"
+      ],
+      "synonyms": [
+        "mudanca de etapa",
+        "funil",
+        "pipeline"
+      ],
+      "emoji": []
+    },
+    "opportunity_won": {
+      "description": "Negócio fechado com sucesso.",
+      "modules": [
+        "crm"
+      ],
+      "synonyms": [
+        "venda ganha",
+        "negocio fechado",
+        "contrato ganho"
+      ],
+      "emoji": []
+    },
+    "opportunity_lost": {
+      "description": "Negócio perdido para concorrente ou por desistência.",
+      "modules": [
+        "crm"
+      ],
+      "synonyms": [
+        "venda perdida",
+        "negocio perdido",
+        "no decision"
+      ],
+      "emoji": []
+    },
+    "quote_sent": {
+      "description": "Proposta comercial enviada ao cliente.",
+      "modules": [
+        "crm",
+        "erp"
+      ],
+      "synonyms": [
+        "orcamento enviado",
+        "proposta enviada"
+      ],
+      "emoji": []
+    },
+    "follow_up_due": {
+      "description": "Contato de acompanhamento previsto para hoje.",
+      "modules": [
+        "crm",
+        "assistant"
+      ],
+      "synonyms": [
+        "retorno agendado",
+        "follow up",
+        "cadencia"
+      ],
+      "emoji": []
+    },
+    "contract_signed": {
+      "description": "Contrato assinado por todas as partes.",
+      "modules": [
+        "crm",
+        "erp"
+      ],
+      "synonyms": [
+        "contrato assinado",
+        "aceite formalizado",
+        "assinatura concluida"
+      ],
+      "emoji": []
+    },
+    "contract_expiring": {
+      "description": "Contrato próximo do fim da vigência.",
+      "modules": [
+        "crm",
+        "erp"
+      ],
+      "synonyms": [
+        "contrato a vencer",
+        "renovacao de contrato",
+        "vigencia"
+      ],
+      "emoji": []
+    },
+    "churn_risk_detected": {
+      "description": "Sinais de risco de cancelamento identificados na conta.",
+      "modules": [
+        "crm"
+      ],
+      "synonyms": [
+        "risco de churn",
+        "cliente em risco",
+        "evasao"
+      ],
+      "emoji": []
+    },
+    "customer_inactive": {
+      "description": "Cliente sem compras ou interações há muito tempo.",
+      "modules": [
+        "crm",
+        "personal_shopper"
+      ],
+      "synonyms": [
+        "cliente inativo",
+        "sem recompra",
+        "dormente"
+      ],
+      "emoji": []
+    },
+    "nps_survey_sent": {
+      "description": "Pesquisa de satisfação enviada ao cliente.",
+      "modules": [
+        "crm"
+      ],
+      "synonyms": [
+        "pesquisa enviada",
+        "nps",
+        "csat"
+      ],
+      "emoji": []
+    },
+    "feedback_received": {
+      "description": "Cliente respondeu com uma avaliação ou comentário.",
+      "modules": [
+        "crm",
+        "ecommerce"
+      ],
+      "synonyms": [
+        "feedback recebido",
+        "opiniao",
+        "resposta do cliente"
+      ],
+      "emoji": []
+    },
+    "birthday_reminder": {
+      "description": "Aniversário de um contato ou cliente hoje.",
+      "modules": [
+        "crm",
+        "assistant"
+      ],
+      "synonyms": [
+        "aniversario",
+        "data especial",
+        "parabens"
+      ],
+      "emoji": []
+    },
+    "ticket_opened": {
+      "description": "Novo chamado registrado pelo cliente.",
+      "modules": [
+        "crm"
+      ],
+      "synonyms": [
+        "chamado aberto",
+        "ticket criado",
+        "solicitacao de suporte"
+      ],
+      "emoji": []
+    },
+    "ticket_assigned": {
+      "description": "Chamado direcionado a um atendente ou fila.",
+      "modules": [
+        "crm"
+      ],
+      "synonyms": [
+        "chamado atribuido",
+        "fila de atendimento"
+      ],
+      "emoji": []
+    },
+    "first_response_sent": {
+      "description": "Primeira resposta do atendimento enviada.",
+      "modules": [
+        "crm"
+      ],
+      "synonyms": [
+        "primeira resposta",
+        "retorno inicial"
+      ],
+      "emoji": []
+    },
+    "ticket_resolved": {
+      "description": "Chamado solucionado e encerrado.",
+      "modules": [
+        "crm"
+      ],
+      "synonyms": [
+        "chamado resolvido",
+        "solucionado",
+        "encerrado"
+      ],
+      "emoji": []
+    },
+    "ticket_reopened": {
+      "description": "Chamado reaberto pelo cliente após a solução.",
+      "modules": [
+        "crm"
+      ],
+      "synonyms": [
+        "chamado reaberto",
+        "reincidencia"
+      ],
+      "emoji": []
+    },
+    "sla_breached": {
+      "description": "Prazo de atendimento acordado foi estourado.",
+      "modules": [
+        "crm",
+        "delivery"
+      ],
+      "synonyms": [
+        "sla estourado",
+        "prazo violado",
+        "fora do acordo"
+      ],
+      "emoji": []
+    },
+    "message_received": {
+      "description": "Nova mensagem do cliente em um canal de atendimento.",
+      "modules": [
+        "crm",
+        "assistant"
+      ],
+      "synonyms": [
+        "nova mensagem",
+        "chat",
+        "whatsapp"
+      ],
+      "emoji": []
+    },
+    "item_added_to_cart": {
+      "description": "Produto incluído no carrinho de compras.",
+      "modules": [
+        "ecommerce"
+      ],
+      "synonyms": [
+        "adicionado ao carrinho",
+        "item no carrinho"
+      ],
+      "emoji": []
+    },
+    "cart_abandoned": {
+      "description": "Carrinho deixado sem concluir a compra.",
+      "modules": [
+        "ecommerce",
+        "personal_shopper"
+      ],
+      "synonyms": [
+        "carrinho abandonado",
+        "compra nao finalizada"
+      ],
+      "emoji": []
+    },
+    "cart_recovered": {
+      "description": "Cliente retomou e concluiu um carrinho abandonado.",
+      "modules": [
+        "ecommerce"
+      ],
+      "synonyms": [
+        "carrinho recuperado",
+        "retomada de compra"
+      ],
+      "emoji": []
+    },
+    "checkout_started": {
+      "description": "Cliente iniciou o processo de finalização da compra.",
+      "modules": [
+        "ecommerce"
+      ],
+      "synonyms": [
+        "checkout iniciado",
+        "finalizar compra"
+      ],
+      "emoji": []
+    },
+    "order_placed": {
+      "description": "Pedido registrado pelo cliente.",
+      "modules": [
+        "ecommerce",
+        "delivery"
+      ],
+      "synonyms": [
+        "pedido realizado",
+        "compra efetuada",
+        "novo pedido"
+      ],
+      "emoji": []
+    },
+    "order_confirmed": {
+      "description": "Pedido confirmado após aprovação do pagamento.",
+      "modules": [
+        "ecommerce",
+        "delivery"
+      ],
+      "synonyms": [
+        "pedido confirmado",
+        "compra aprovada"
+      ],
+      "emoji": []
+    },
+    "order_modified": {
+      "description": "Itens ou dados do pedido alterados antes do envio.",
+      "modules": [
+        "ecommerce"
+      ],
+      "synonyms": [
+        "pedido alterado",
+        "troca de item"
+      ],
+      "emoji": []
+    },
+    "order_cancelled": {
+      "description": "Pedido cancelado pelo cliente ou pela loja.",
+      "modules": [
+        "ecommerce",
+        "delivery"
+      ],
+      "synonyms": [
+        "pedido cancelado",
+        "compra cancelada"
+      ],
+      "emoji": []
+    },
+    "coupon_applied": {
+      "description": "Cupom de desconto aplicado ao pedido.",
+      "modules": [
+        "ecommerce",
+        "personal_shopper"
+      ],
+      "synonyms": [
+        "cupom aplicado",
+        "codigo promocional",
+        "voucher"
+      ],
+      "emoji": []
+    },
+    "coupon_invalid": {
+      "description": "Cupom expirado, inexistente ou fora das regras.",
+      "modules": [
+        "ecommerce"
+      ],
+      "synonyms": [
+        "cupom invalido",
+        "codigo expirado"
+      ],
+      "emoji": []
+    },
+    "discount_applied": {
+      "description": "Desconto promocional concedido ao pedido.",
+      "modules": [
+        "ecommerce",
+        "personal_shopper"
+      ],
+      "synonyms": [
+        "desconto aplicado",
+        "promocao",
+        "oferta"
+      ],
+      "emoji": []
+    },
+    "gift_card_redeemed": {
+      "description": "Vale-presente resgatado no pagamento.",
+      "modules": [
+        "ecommerce",
+        "personal_shopper"
+      ],
+      "synonyms": [
+        "vale presente",
+        "gift card",
+        "credito resgatado"
+      ],
+      "emoji": []
+    },
+    "free_shipping_unlocked": {
+      "description": "Pedido atingiu o valor mínimo para frete grátis.",
+      "modules": [
+        "ecommerce"
+      ],
+      "synonyms": [
+        "frete gratis",
+        "frete liberado"
+      ],
+      "emoji": []
+    },
+    "wishlist_item_added": {
+      "description": "Item salvo na lista de desejos.",
+      "modules": [
+        "ecommerce",
+        "personal_shopper"
+      ],
+      "synonyms": [
+        "lista de desejos",
+        "favoritos",
+        "salvo para depois"
+      ],
+      "emoji": []
+    },
+    "back_in_stock": {
+      "description": "Produto aguardado voltou a ter estoque.",
+      "modules": [
+        "ecommerce",
+        "personal_shopper"
+      ],
+      "synonyms": [
+        "voltou ao estoque",
+        "disponivel novamente",
+        "avise me"
+      ],
+      "emoji": []
+    },
+    "price_drop_alert": {
+      "description": "Preço de um item observado caiu.",
+      "modules": [
+        "ecommerce",
+        "personal_shopper",
+        "assistant"
+      ],
+      "synonyms": [
+        "queda de preco",
+        "baixou de preco",
+        "alerta de preco"
+      ],
+      "emoji": []
+    },
+    "review_submitted": {
+      "description": "Cliente publicou uma avaliação do produto.",
+      "modules": [
+        "ecommerce"
+      ],
+      "synonyms": [
+        "avaliacao enviada",
+        "resenha",
+        "comentario"
+      ],
+      "emoji": []
+    },
+    "review_approved": {
+      "description": "Avaliação aprovada pela moderação e publicada.",
+      "modules": [
+        "ecommerce"
+      ],
+      "synonyms": [
+        "avaliacao publicada",
+        "moderacao aprovada"
+      ],
+      "emoji": []
+    },
+    "loyalty_points_earned": {
+      "description": "Pontos de fidelidade creditados na conta.",
+      "modules": [
+        "ecommerce",
+        "personal_shopper"
+      ],
+      "synonyms": [
+        "pontos creditados",
+        "cashback",
+        "fidelidade"
+      ],
+      "emoji": []
+    },
+    "loyalty_tier_upgraded": {
+      "description": "Cliente subiu de nível no programa de fidelidade.",
+      "modules": [
+        "ecommerce",
+        "personal_shopper"
+      ],
+      "synonyms": [
+        "novo nivel",
+        "upgrade de categoria",
+        "cliente vip"
+      ],
+      "emoji": []
+    },
+    "subscription_started": {
+      "description": "Assinatura recorrente ativada.",
+      "modules": [
+        "ecommerce",
+        "core"
+      ],
+      "synonyms": [
+        "assinatura ativa",
+        "plano contratado",
+        "recorrencia iniciada"
+      ],
+      "emoji": []
+    },
+    "subscription_renewed": {
+      "description": "Assinatura renovada no ciclo seguinte.",
+      "modules": [
+        "ecommerce",
+        "core"
+      ],
+      "synonyms": [
+        "renovacao",
+        "cobranca recorrente"
+      ],
+      "emoji": []
+    },
+    "subscription_cancelled": {
+      "description": "Assinatura cancelada pelo cliente.",
+      "modules": [
+        "ecommerce",
+        "core"
+      ],
+      "synonyms": [
+        "assinatura cancelada",
+        "plano cancelado"
+      ],
+      "emoji": []
+    },
+    "order_being_prepared": {
+      "description": "Pedido em preparo pela loja, cozinha ou separação.",
+      "modules": [
+        "delivery",
+        "ecommerce"
+      ],
+      "synonyms": [
+        "em preparo",
+        "em separacao",
+        "sendo preparado"
+      ],
+      "emoji": []
+    },
+    "order_packed": {
+      "description": "Pedido embalado e pronto para expedição.",
+      "modules": [
+        "delivery",
+        "ecommerce"
+      ],
+      "synonyms": [
+        "embalado",
+        "pronto para envio",
+        "expedicao"
+      ],
+      "emoji": []
+    },
+    "pickup_ready": {
+      "description": "Pedido disponível para retirada no ponto combinado.",
+      "modules": [
+        "delivery",
+        "ecommerce"
+      ],
+      "synonyms": [
+        "pronto para retirada",
+        "retire na loja",
+        "click and collect"
+      ],
+      "emoji": []
+    },
+    "courier_assigned": {
+      "description": "Entregador designado para a coleta.",
+      "modules": [
+        "delivery"
+      ],
+      "synonyms": [
+        "entregador designado",
+        "motoboy atribuido"
+      ],
+      "emoji": []
+    },
+    "courier_arrived": {
+      "description": "Entregador chegou ao ponto de coleta.",
+      "modules": [
+        "delivery"
+      ],
+      "synonyms": [
+        "entregador no local",
+        "chegou para coletar"
+      ],
+      "emoji": []
+    },
+    "order_shipped": {
+      "description": "Pedido despachado e a caminho do destino.",
+      "modules": [
+        "delivery",
+        "ecommerce"
+      ],
+      "synonyms": [
+        "pedido enviado",
+        "despachado",
+        "postado"
+      ],
+      "emoji": []
+    },
+    "shipment_in_transit": {
+      "description": "Encomenda em trânsito entre pontos da malha.",
+      "modules": [
+        "delivery"
+      ],
+      "synonyms": [
+        "em transito",
+        "a caminho",
+        "em rota"
+      ],
+      "emoji": []
+    },
+    "tracking_updated": {
+      "description": "Novo evento registrado no rastreamento.",
+      "modules": [
+        "delivery",
+        "ecommerce"
+      ],
+      "synonyms": [
+        "rastreio atualizado",
+        "novo evento",
+        "status de entrega"
+      ],
+      "emoji": []
+    },
+    "out_for_delivery": {
+      "description": "Encomenda saiu para entrega ao destinatário.",
+      "modules": [
+        "delivery"
+      ],
+      "synonyms": [
+        "saiu para entrega",
+        "ultima milha"
+      ],
+      "emoji": []
+    },
+    "courier_nearby": {
+      "description": "Entregador a poucos minutos do endereço.",
+      "modules": [
+        "delivery"
+      ],
+      "synonyms": [
+        "entregador proximo",
+        "quase chegando",
+        "chegando"
+      ],
+      "emoji": []
+    },
+    "delivery_completed": {
+      "description": "Entrega concluída ao destinatário.",
+      "modules": [
+        "delivery",
+        "ecommerce"
+      ],
+      "synonyms": [
+        "entregue",
+        "entrega concluida",
+        "recebido"
+      ],
+      "emoji": []
+    },
+    "proof_of_delivery": {
+      "description": "Comprovante de entrega registrado com foto ou assinatura.",
+      "modules": [
+        "delivery"
+      ],
+      "synonyms": [
+        "comprovante de entrega",
+        "canhoto",
+        "assinatura do recebedor"
+      ],
+      "emoji": []
+    },
+    "contactless_delivery": {
+      "description": "Entrega deixada sem contato conforme instrução.",
+      "modules": [
+        "delivery"
+      ],
+      "synonyms": [
+        "entrega sem contato",
+        "deixar na portaria"
+      ],
+      "emoji": []
+    },
+    "delivery_failed": {
+      "description": "Tentativa de entrega frustrada.",
+      "modules": [
+        "delivery"
+      ],
+      "synonyms": [
+        "entrega nao realizada",
+        "destinatario ausente",
+        "insucesso"
+      ],
+      "emoji": []
+    },
+    "delivery_delayed": {
+      "description": "Entrega atrasada em relação ao prazo prometido.",
+      "modules": [
+        "delivery",
+        "ecommerce"
+      ],
+      "synonyms": [
+        "entrega atrasada",
+        "fora do prazo"
+      ],
+      "emoji": []
+    },
+    "delivery_rescheduled": {
+      "description": "Nova data ou janela de entrega combinada.",
+      "modules": [
+        "delivery"
+      ],
+      "synonyms": [
+        "reagendamento de entrega",
+        "nova tentativa"
+      ],
+      "emoji": []
+    },
+    "address_invalid": {
+      "description": "Endereço incompleto ou não localizado pela transportadora.",
+      "modules": [
+        "delivery",
+        "core"
+      ],
+      "synonyms": [
+        "endereco invalido",
+        "cep nao encontrado",
+        "endereco incompleto"
+      ],
+      "emoji": []
+    },
+    "package_returned": {
+      "description": "Encomenda devolvida à origem após insucessos.",
+      "modules": [
+        "delivery",
+        "ecommerce"
+      ],
+      "synonyms": [
+        "devolvido ao remetente",
+        "logistica reversa",
+        "retorno"
+      ],
+      "emoji": []
+    },
+    "appointment_requested": {
+      "description": "Solicitação de horário enviada pelo cliente.",
+      "modules": [
+        "scheduling",
+        "health"
+      ],
+      "synonyms": [
+        "pedido de agendamento",
+        "solicitacao de horario"
+      ],
+      "emoji": []
+    },
+    "appointment_confirmed": {
+      "description": "Horário confirmado por ambas as partes.",
+      "modules": [
+        "scheduling",
+        "health"
+      ],
+      "synonyms": [
+        "agendamento confirmado",
+        "horario marcado",
+        "confirmado"
+      ],
+      "emoji": []
+    },
+    "appointment_reminder": {
+      "description": "Lembrete do compromisso próximo.",
+      "modules": [
+        "scheduling",
+        "health",
+        "assistant"
+      ],
+      "synonyms": [
+        "lembrete de agendamento",
+        "aviso de consulta",
+        "compromisso amanha"
+      ],
+      "emoji": []
+    },
+    "appointment_rescheduled": {
+      "description": "Compromisso remarcado para outro horário.",
+      "modules": [
+        "scheduling",
+        "health"
+      ],
+      "synonyms": [
+        "remarcado",
+        "reagendado",
+        "novo horario"
+      ],
+      "emoji": []
+    },
+    "appointment_cancelled": {
+      "description": "Compromisso cancelado antes da realização.",
+      "modules": [
+        "scheduling",
+        "health"
+      ],
+      "synonyms": [
+        "agendamento cancelado",
+        "desmarcado"
+      ],
+      "emoji": []
+    },
+    "appointment_completed": {
+      "description": "Atendimento realizado e encerrado.",
+      "modules": [
+        "scheduling",
+        "health"
+      ],
+      "synonyms": [
+        "atendimento realizado",
+        "consulta concluida"
+      ],
+      "emoji": []
+    },
+    "appointment_no_show": {
+      "description": "Cliente não compareceu ao horário marcado.",
+      "modules": [
+        "scheduling",
+        "health"
+      ],
+      "synonyms": [
+        "nao compareceu",
+        "falta",
+        "no show"
+      ],
+      "emoji": []
+    },
+    "check_in_completed": {
+      "description": "Presença confirmada na chegada ao local.",
+      "modules": [
+        "scheduling",
+        "health"
+      ],
+      "synonyms": [
+        "check in",
+        "chegada confirmada",
+        "presenca registrada"
+      ],
+      "emoji": []
+    },
+    "slot_unavailable": {
+      "description": "Horário escolhido não está mais disponível.",
+      "modules": [
+        "scheduling"
+      ],
+      "synonyms": [
+        "horario indisponivel",
+        "agenda cheia",
+        "sem vagas"
+      ],
+      "emoji": []
+    },
+    "availability_updated": {
+      "description": "Agenda de disponibilidade do profissional atualizada.",
+      "modules": [
+        "scheduling",
+        "health"
+      ],
+      "synonyms": [
+        "agenda atualizada",
+        "novos horarios",
+        "disponibilidade"
+      ],
+      "emoji": []
+    },
+    "waitlist_added": {
+      "description": "Cliente entrou na lista de espera por um horário.",
+      "modules": [
+        "scheduling",
+        "health"
+      ],
+      "synonyms": [
+        "lista de espera",
+        "fila de espera"
+      ],
+      "emoji": []
+    },
+    "waitlist_slot_opened": {
+      "description": "Vaga liberada para quem está na lista de espera.",
+      "modules": [
+        "scheduling",
+        "health"
+      ],
+      "synonyms": [
+        "vaga liberada",
+        "surgiu horario"
+      ],
+      "emoji": []
+    },
+    "calendar_conflict": {
+      "description": "Conflito de horário entre dois compromissos.",
+      "modules": [
+        "scheduling",
+        "assistant"
+      ],
+      "synonyms": [
+        "conflito de agenda",
+        "sobreposicao",
+        "choque de horario"
+      ],
+      "emoji": []
+    },
+    "booking_expired": {
+      "description": "Reserva expirou sem confirmação dentro do prazo.",
+      "modules": [
+        "scheduling"
+      ],
+      "synonyms": [
+        "reserva expirada",
+        "tempo esgotado"
+      ],
+      "emoji": []
+    },
+    "ride_requested": {
+      "description": "Corrida solicitada pelo passageiro.",
+      "modules": [
+        "taxi"
+      ],
+      "synonyms": [
+        "corrida solicitada",
+        "chamar carro",
+        "pedir viagem"
+      ],
+      "emoji": []
+    },
+    "fare_estimated": {
+      "description": "Estimativa de preço da corrida apresentada.",
+      "modules": [
+        "taxi"
+      ],
+      "synonyms": [
+        "estimativa de preco",
+        "valor previsto",
+        "tarifa estimada"
+      ],
+      "emoji": []
+    },
+    "surge_pricing_active": {
+      "description": "Tarifa dinâmica em vigor por alta demanda.",
+      "modules": [
+        "taxi"
+      ],
+      "synonyms": [
+        "tarifa dinamica",
+        "preco alto",
+        "alta demanda"
+      ],
+      "emoji": []
+    },
+    "driver_assigned": {
+      "description": "Motorista aceitou e foi designado à corrida.",
+      "modules": [
+        "taxi"
+      ],
+      "synonyms": [
+        "motorista designado",
+        "motorista a caminho"
+      ],
+      "emoji": []
+    },
+    "driver_arriving": {
+      "description": "Motorista chegando ao ponto de embarque.",
+      "modules": [
+        "taxi"
+      ],
+      "synonyms": [
+        "motorista chegando",
+        "aguardando embarque"
+      ],
+      "emoji": []
+    },
+    "ride_started": {
+      "description": "Viagem iniciada com o passageiro a bordo.",
+      "modules": [
+        "taxi"
+      ],
+      "synonyms": [
+        "viagem iniciada",
+        "embarque realizado",
+        "corrida em andamento"
+      ],
+      "emoji": []
+    },
+    "eta_updated": {
+      "description": "Previsão de chegada recalculada.",
+      "modules": [
+        "taxi",
+        "delivery"
+      ],
+      "synonyms": [
+        "previsao atualizada",
+        "novo eta",
+        "tempo estimado"
+      ],
+      "emoji": []
+    },
+    "route_changed": {
+      "description": "Trajeto alterado por trânsito ou pedido do passageiro.",
+      "modules": [
+        "taxi",
+        "delivery"
+      ],
+      "synonyms": [
+        "rota alterada",
+        "desvio",
+        "novo trajeto"
+      ],
+      "emoji": []
+    },
+    "ride_completed": {
+      "description": "Corrida finalizada no destino.",
+      "modules": [
+        "taxi"
+      ],
+      "synonyms": [
+        "viagem concluida",
+        "corrida finalizada",
+        "desembarque"
+      ],
+      "emoji": []
+    },
+    "ride_cancelled": {
+      "description": "Corrida cancelada pelo passageiro ou pelo motorista.",
+      "modules": [
+        "taxi"
+      ],
+      "synonyms": [
+        "corrida cancelada",
+        "viagem cancelada"
+      ],
+      "emoji": []
+    },
+    "passenger_no_show": {
+      "description": "Passageiro não compareceu ao ponto de embarque.",
+      "modules": [
+        "taxi"
+      ],
+      "synonyms": [
+        "passageiro ausente",
+        "nao embarcou"
+      ],
+      "emoji": []
+    },
+    "trip_receipt_sent": {
+      "description": "Recibo da viagem enviado ao passageiro.",
+      "modules": [
+        "taxi"
+      ],
+      "synonyms": [
+        "recibo enviado",
+        "comprovante de viagem"
+      ],
+      "emoji": []
+    },
+    "driver_rated": {
+      "description": "Avaliação do motorista registrada.",
+      "modules": [
+        "taxi"
+      ],
+      "synonyms": [
+        "motorista avaliado",
+        "nota do motorista",
+        "estrelas"
+      ],
+      "emoji": []
+    },
+    "safety_alert_triggered": {
+      "description": "Botão de emergência acionado durante a viagem.",
+      "modules": [
+        "taxi",
+        "health"
+      ],
+      "synonyms": [
+        "botao de panico",
+        "emergencia na viagem",
+        "alerta de seguranca na viagem"
+      ],
+      "emoji": []
+    },
+    "vehicle_maintenance_due": {
+      "description": "Veículo com manutenção preventiva a vencer.",
+      "modules": [
+        "taxi",
+        "delivery",
+        "erp"
+      ],
+      "synonyms": [
+        "revisao do veiculo",
+        "manutencao preventiva",
+        "troca de oleo"
+      ],
+      "emoji": []
+    },
+    "patient_registered": {
+      "description": "Paciente cadastrado no prontuário.",
+      "modules": [
+        "health"
+      ],
+      "synonyms": [
+        "paciente cadastrado",
+        "admissao do paciente",
+        "novo prontuario"
+      ],
+      "emoji": []
+    },
+    "consultation_scheduled": {
+      "description": "Consulta médica marcada na agenda do profissional.",
+      "modules": [
+        "health",
+        "scheduling"
+      ],
+      "synonyms": [
+        "consulta marcada",
+        "agendamento medico"
+      ],
+      "emoji": []
+    },
+    "telemedicine_session_started": {
+      "description": "Atendimento por vídeo iniciado.",
+      "modules": [
+        "health"
+      ],
+      "synonyms": [
+        "teleconsulta",
+        "atendimento online",
+        "consulta por video"
+      ],
+      "emoji": []
+    },
+    "symptom_reported": {
+      "description": "Paciente relatou sintomas pelo aplicativo.",
+      "modules": [
+        "health"
+      ],
+      "synonyms": [
+        "sintoma relatado",
+        "queixa",
+        "triagem"
+      ],
+      "emoji": []
+    },
+    "prescription_issued": {
+      "description": "Receita médica emitida ao paciente.",
+      "modules": [
+        "health"
+      ],
+      "synonyms": [
+        "receita emitida",
+        "prescricao",
+        "receituario"
+      ],
+      "emoji": []
+    },
+    "prescription_refill_due": {
+      "description": "Medicamento contínuo prestes a acabar.",
+      "modules": [
+        "health"
+      ],
+      "synonyms": [
+        "renovar receita",
+        "recompra de medicamento",
+        "fim do estoque do remedio"
+      ],
+      "emoji": []
+    },
+    "medication_reminder": {
+      "description": "Hora de tomar a medicação prescrita.",
+      "modules": [
+        "health",
+        "assistant"
+      ],
+      "synonyms": [
+        "lembrete de remedio",
+        "hora do medicamento",
+        "posologia"
+      ],
+      "emoji": []
+    },
+    "exam_requested": {
+      "description": "Exame solicitado pelo profissional de saúde.",
+      "modules": [
+        "health"
+      ],
+      "synonyms": [
+        "exame solicitado",
+        "pedido de exame",
+        "requisicao de exame"
+      ],
+      "emoji": []
+    },
+    "exam_result_ready": {
+      "description": "Resultado de exame disponível para consulta.",
+      "modules": [
+        "health"
+      ],
+      "synonyms": [
+        "resultado disponivel",
+        "laudo pronto",
+        "exame liberado"
+      ],
+      "emoji": []
+    },
+    "exam_result_abnormal": {
+      "description": "Resultado fora dos valores de referência.",
+      "modules": [
+        "health"
+      ],
+      "synonyms": [
+        "resultado alterado",
+        "fora do padrao",
+        "valor critico"
+      ],
+      "emoji": []
+    },
+    "vital_signs_recorded": {
+      "description": "Sinais vitais aferidos e registrados.",
+      "modules": [
+        "health"
+      ],
+      "synonyms": [
+        "sinais vitais",
+        "pressao arterial",
+        "batimentos"
+      ],
+      "emoji": []
+    },
+    "allergy_recorded": {
+      "description": "Alergia ou contraindicação registrada no prontuário.",
+      "modules": [
+        "health"
+      ],
+      "synonyms": [
+        "alergia registrada",
+        "contraindicacao",
+        "restricao"
+      ],
+      "emoji": []
+    },
+    "vaccination_due": {
+      "description": "Dose de vacina prevista no calendário.",
+      "modules": [
+        "health"
+      ],
+      "synonyms": [
+        "vacina a vencer",
+        "dose pendente",
+        "calendario vacinal"
+      ],
+      "emoji": []
+    },
+    "referral_issued": {
+      "description": "Encaminhamento para outro especialista emitido.",
+      "modules": [
+        "health"
+      ],
+      "synonyms": [
+        "encaminhamento",
+        "guia de referencia",
+        "especialista"
+      ],
+      "emoji": []
+    },
+    "treatment_plan_updated": {
+      "description": "Plano terapêutico revisado pelo profissional.",
+      "modules": [
+        "health"
+      ],
+      "synonyms": [
+        "plano de tratamento",
+        "conduta atualizada"
+      ],
+      "emoji": []
+    },
+    "health_insurance_verified": {
+      "description": "Elegibilidade do convênio confirmada.",
+      "modules": [
+        "health"
+      ],
+      "synonyms": [
+        "convenio autorizado",
+        "plano de saude",
+        "elegibilidade"
+      ],
+      "emoji": []
+    },
+    "medical_record_shared": {
+      "description": "Prontuário compartilhado mediante consentimento.",
+      "modules": [
+        "health"
+      ],
+      "synonyms": [
+        "prontuario compartilhado",
+        "segunda opiniao"
+      ],
+      "emoji": []
+    },
+    "emergency_alert": {
+      "description": "Situação clínica de urgência detectada.",
+      "modules": [
+        "health"
+      ],
+      "synonyms": [
+        "emergencia",
+        "urgencia",
+        "socorro"
+      ],
+      "emoji": []
+    },
+    "activity_goal_met": {
+      "description": "Meta diária de atividade física atingida.",
+      "modules": [
+        "health",
+        "assistant"
+      ],
+      "synonyms": [
+        "meta de passos",
+        "atividade concluida",
+        "exercicio do dia"
+      ],
+      "emoji": []
+    },
+    "sleep_goal_met": {
+      "description": "Meta de horas de sono alcançada.",
+      "modules": [
+        "health",
+        "assistant"
+      ],
+      "synonyms": [
+        "meta de sono",
+        "boa noite de sono",
+        "descanso"
+      ],
+      "emoji": []
+    },
+    "hydration_reminder": {
+      "description": "Lembrete para beber água.",
+      "modules": [
+        "health",
+        "assistant"
+      ],
+      "synonyms": [
+        "beber agua",
+        "hidratacao",
+        "lembrete de agua"
+      ],
+      "emoji": []
+    },
+    "weight_logged": {
+      "description": "Peso corporal registrado no acompanhamento.",
+      "modules": [
+        "health",
+        "assistant"
+      ],
+      "synonyms": [
+        "peso registrado",
+        "balanca",
+        "acompanhamento de peso"
+      ],
+      "emoji": []
+    },
+    "daily_briefing": {
+      "description": "Resumo do dia com agenda, tarefas e alertas.",
+      "modules": [
+        "assistant"
+      ],
+      "synonyms": [
+        "resumo do dia",
+        "briefing",
+        "bom dia"
+      ],
+      "emoji": []
+    },
+    "digest_ready": {
+      "description": "Resumo periódico consolidado disponível.",
+      "modules": [
+        "assistant",
+        "crm"
+      ],
+      "synonyms": [
+        "resumo semanal",
+        "digest",
+        "boletim"
+      ],
+      "emoji": []
+    },
+    "reminder_due": {
+      "description": "Lembrete agendado chegou na hora.",
+      "modules": [
+        "assistant",
+        "scheduling"
+      ],
+      "synonyms": [
+        "lembrete",
+        "alarme",
+        "hora marcada"
+      ],
+      "emoji": []
+    },
+    "task_created": {
+      "description": "Nova tarefa adicionada à lista.",
+      "modules": [
+        "assistant",
+        "core"
+      ],
+      "synonyms": [
+        "tarefa criada",
+        "novo afazer",
+        "to do"
+      ],
+      "emoji": []
+    },
+    "task_snoozed": {
+      "description": "Tarefa adiada para mais tarde.",
+      "modules": [
+        "assistant"
+      ],
+      "synonyms": [
+        "adiado",
+        "soneca",
+        "deixar para depois"
+      ],
+      "emoji": []
+    },
+    "habit_streak": {
+      "description": "Sequência de dias mantendo um hábito.",
+      "modules": [
+        "assistant",
+        "health"
+      ],
+      "synonyms": [
+        "sequencia",
+        "ofensiva",
+        "streak"
+      ],
+      "emoji": []
+    },
+    "note_saved": {
+      "description": "Anotação registrada e sincronizada.",
+      "modules": [
+        "assistant"
+      ],
+      "synonyms": [
+        "nota salva",
+        "anotacao",
+        "rascunho salvo"
+      ],
+      "emoji": []
+    },
+    "event_upcoming": {
+      "description": "Compromisso da agenda começa em breve.",
+      "modules": [
+        "assistant",
+        "scheduling"
+      ],
+      "synonyms": [
+        "evento proximo",
+        "comeca em breve",
+        "daqui a pouco"
+      ],
+      "emoji": []
+    },
+    "travel_itinerary_ready": {
+      "description": "Roteiro de viagem consolidado com voos e reservas.",
+      "modules": [
+        "assistant"
+      ],
+      "synonyms": [
+        "roteiro de viagem",
+        "itinerario",
+        "reservas"
+      ],
+      "emoji": []
+    },
+    "bill_due_soon": {
+      "description": "Conta pessoal a vencer nos próximos dias.",
+      "modules": [
+        "assistant",
+        "erp"
+      ],
+      "synonyms": [
+        "conta a vencer",
+        "boleto proximo",
+        "vencimento"
+      ],
+      "emoji": []
+    },
+    "spending_limit_reached": {
+      "description": "Gasto do mês atingiu o limite definido.",
+      "modules": [
+        "assistant",
+        "erp"
+      ],
+      "synonyms": [
+        "limite de gastos",
+        "estourou o orcamento pessoal"
+      ],
+      "emoji": []
+    },
+    "savings_goal_reached": {
+      "description": "Meta de poupança alcançada.",
+      "modules": [
+        "assistant"
+      ],
+      "synonyms": [
+        "meta de economia",
+        "objetivo financeiro",
+        "juntei o valor"
+      ],
+      "emoji": []
+    },
+    "document_expiring": {
+      "description": "Documento pessoal perto de vencer.",
+      "modules": [
+        "assistant",
+        "health"
+      ],
+      "synonyms": [
+        "documento vencendo",
+        "cnh a vencer",
+        "validade do documento"
+      ],
+      "emoji": []
+    },
+    "weather_alert": {
+      "description": "Condição climática relevante para o dia.",
+      "modules": [
+        "assistant",
+        "delivery"
+      ],
+      "synonyms": [
+        "alerta de chuva",
+        "previsao do tempo",
+        "clima"
+      ],
+      "emoji": []
+    },
+    "focus_mode_enabled": {
+      "description": "Modo foco ativado, silenciando interrupções.",
+      "modules": [
+        "assistant"
+      ],
+      "synonyms": [
+        "modo foco",
+        "nao perturbe",
+        "concentracao"
+      ],
+      "emoji": []
+    },
+    "goal_achieved": {
+      "description": "Objetivo definido pelo usuário foi atingido.",
+      "modules": [
+        "assistant",
+        "crm",
+        "erp"
+      ],
+      "synonyms": [
+        "meta atingida",
+        "objetivo alcancado",
+        "conquista"
+      ],
+      "emoji": []
+    },
+    "style_profile_created": {
+      "description": "Perfil de estilo e preferências montado.",
+      "modules": [
+        "personal_shopper"
+      ],
+      "synonyms": [
+        "perfil de estilo",
+        "preferencias de moda",
+        "questionario de estilo"
+      ],
+      "emoji": []
+    },
+    "outfit_suggested": {
+      "description": "Combinação de peças sugerida para o cliente.",
+      "modules": [
+        "personal_shopper"
+      ],
+      "synonyms": [
+        "look sugerido",
+        "combinacao",
+        "outfit"
+      ],
+      "emoji": []
+    },
+    "size_recommendation": {
+      "description": "Tamanho recomendado com base no histórico e nas medidas.",
+      "modules": [
+        "personal_shopper",
+        "ecommerce"
+      ],
+      "synonyms": [
+        "tamanho ideal",
+        "numeracao",
+        "guia de medidas"
+      ],
+      "emoji": []
+    },
+    "product_recommended": {
+      "description": "Item recomendado pelo motor de recomendação.",
+      "modules": [
+        "personal_shopper",
+        "ecommerce"
+      ],
+      "synonyms": [
+        "recomendacao",
+        "sugestao de produto",
+        "talvez voce goste"
+      ],
+      "emoji": []
+    },
+    "similar_item_found": {
+      "description": "Alternativa parecida encontrada para um item indisponível.",
+      "modules": [
+        "personal_shopper",
+        "ecommerce"
+      ],
+      "synonyms": [
+        "item similar",
+        "parecido",
+        "substituto"
+      ],
+      "emoji": []
+    },
+    "budget_match_found": {
+      "description": "Opção encontrada dentro do orçamento informado.",
+      "modules": [
+        "personal_shopper"
+      ],
+      "synonyms": [
+        "dentro do orcamento",
+        "cabe no bolso",
+        "opcao economica"
+      ],
+      "emoji": []
+    },
+    "wardrobe_gap_detected": {
+      "description": "Peça faltante identificada no guarda-roupa do cliente.",
+      "modules": [
+        "personal_shopper"
+      ],
+      "synonyms": [
+        "falta no guarda roupa",
+        "peca faltante",
+        "complemento"
+      ],
+      "emoji": []
+    },
+    "trend_alert": {
+      "description": "Nova tendência relevante para o perfil do cliente.",
+      "modules": [
+        "personal_shopper"
+      ],
+      "synonyms": [
+        "tendencia",
+        "novidade da moda",
+        "em alta"
+      ],
+      "emoji": []
+    },
+    "seasonal_collection_launched": {
+      "description": "Coleção de estação disponível na loja.",
+      "modules": [
+        "personal_shopper",
+        "ecommerce"
+      ],
+      "synonyms": [
+        "nova colecao",
+        "lancamento de estacao"
+      ],
+      "emoji": []
+    },
+    "personal_offer_available": {
+      "description": "Oferta exclusiva preparada para o cliente.",
+      "modules": [
+        "personal_shopper",
+        "ecommerce",
+        "crm"
+      ],
+      "synonyms": [
+        "oferta exclusiva",
+        "condicao especial",
+        "so para voce"
+      ],
+      "emoji": []
+    },
+    "purchase_history_analyzed": {
+      "description": "Histórico de compras analisado para gerar sugestões.",
+      "modules": [
+        "personal_shopper",
+        "crm"
+      ],
+      "synonyms": [
+        "analise de historico",
+        "perfil de consumo"
+      ],
+      "emoji": []
+    },
+    "gift_suggestion": {
+      "description": "Sugestão de presente para uma data ou pessoa.",
+      "modules": [
+        "personal_shopper",
+        "assistant"
+      ],
+      "synonyms": [
+        "sugestao de presente",
+        "ideia de presente",
+        "dica de presente"
+      ],
+      "emoji": []
+    }
+  }
+}
