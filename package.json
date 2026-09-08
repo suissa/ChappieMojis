@@ -14,7 +14,9 @@
     "test": "node --experimental-strip-types --test test/*.test.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "scrape": "node --experimental-strip-types scripts/scrape-emojidb.ts",
-    "scrape:write": "node --experimental-strip-types scripts/scrape-emojidb.ts --write"
+    "scrape:write": "node --experimental-strip-types scripts/scrape-emojidb.ts --write",
+    "labels:fill": "node --experimental-strip-types scripts/fill-emojis.ts",
+    "labels:fill:resume": "node --experimental-strip-types scripts/fill-emojis.ts --resume"
   },
   "license": "MIT"
 }

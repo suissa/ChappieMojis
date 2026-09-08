@@ -251,6 +251,67 @@ O parser é tolerante de propósito: primeiro tenta os nós de resultado (`class
 
 Os testes cobrem o parser com HTML sintético (sequências ZWJ, tons de pele, bandeiras, keycaps, entidades HTML, markup alterado) e o pipeline de ponta a ponta contra um servidor HTTP local, incluindo `404`, retentativa em `503` e cache. Nada disso exige acesso ao emojidb.
 
+## Rótulos canônicos de mensagem (`canonical_labels.json`)
+
+`data/canonical_labels.json` é um catálogo separado, com **243 rótulos canônicos** para os tipos de mensagem de um sistema completo — ERP + CRM + E-commerce + Agendamento + Assistente pessoal + Personal shopper + Delivery + Táxi + Saúde.
+
+Enquanto `emojis.json` responde *"que emoji representa este conceito?"*, este arquivo responde *"que mensagens este sistema precisa emitir?"* — `order_placed`, `payment_failed`, `appointment_reminder`, `exam_result_abnormal`, `driver_arriving`.
+
+```json
+{
+  "order_placed": {
+    "description": "Pedido registrado pelo cliente.",
+    "modules": ["ecommerce", "delivery"],
+    "synonyms": ["pedido realizado", "compra efetuada", "novo pedido"],
+    "emoji": []
+  }
+}
+```
+
+O campo `emoji` nasce **vazio de propósito**: é preenchido pelo script abaixo com os candidatos do emojidb, para escolha manual do oficial depois.
+
+Cobertura por módulo (um rótulo pode pertencer a mais de um):
+
+| Módulo | Rótulos | Exemplos |
+| --- | ---: | --- |
+| `erp` | 71 | `stock_out`, `invoice_overdue`, `tax_document_rejected`, `payroll_processed` |
+| `core` | 58 | `login_failed`, `session_expired`, `validation_error`, `approval_requested` |
+| `ecommerce` | 55 | `cart_abandoned`, `coupon_invalid`, `back_in_stock`, `loyalty_tier_upgraded` |
+| `crm` | 41 | `lead_qualified`, `opportunity_won`, `churn_risk_detected`, `sla_breached` |
+| `health` | 41 | `prescription_refill_due`, `exam_result_abnormal`, `vaccination_due` |
+| `assistant` | 34 | `daily_briefing`, `bill_due_soon`, `habit_streak`, `focus_mode_enabled` |
+| `delivery` | 29 | `out_for_delivery`, `courier_nearby`, `proof_of_delivery`, `package_returned` |
+| `personal_shopper` | 22 | `outfit_suggested`, `size_recommendation`, `wardrobe_gap_detected` |
+| `scheduling` | 17 | `appointment_no_show`, `waitlist_slot_opened`, `calendar_conflict` |
+| `taxi` | 17 | `surge_pricing_active`, `driver_arriving`, `safety_alert_triggered` |
+
+### Preenchendo os emojis
+
+`scripts/fill-emojis.ts` faz um `GET` em `https://emojidb.org/{label}-emojis?utm_source=user_search` para cada rótulo (o `_` do label vira `-` no slug), lê o texto dos elementos em `body > main > div.emoji-list > div > div.emoji` e guarda os **5 primeiros**, na ordem da página, em `emoji`.
+
+```bash
+npm run labels:fill -- --dry-run     # mostra o que viria, sem gravar
+npm run labels:fill                  # grava no canonical_labels.json
+npm run labels:fill:resume           # só os rótulos ainda vazios
+npm run labels:fill -- --label=order_placed
+npm run labels:fill -- --fixture=pagina.html   # só o seletor, sem rede
+```
+
+```
+[1/243] order_placed                   🛒 🧾 📦 ✅ 💳
+[2/243] payment_failed                 ❌ 💳 🚫 😵 ⚠️
+```
+
+Flags: `--top=<n>` (padrão 5), `--delay=<ms>` (padrão 1500), `--limit=<n>`, `--cache=<dir>`, `--no-cache`, `--json`, `--base=<url>`.
+
+Herda do outro script o mesmo cuidado de rede: requisições em série com intervalo, cache em disco, retentativa com backoff, `404` definitivo. Rótulos sem resultado ficam com `emoji: []` e são listados no fim — nunca recebem um palpite. O processo sai com código `1` se mais de um terço falhar.
+
+### O seletor
+
+`scripts/html-select.ts` implementa o caminho `A > B > C` sobre HTML, sem dependências: `children()` distingue filhos diretos de descendentes contando profundidade de tags, e `queryPath()` aplica os passos em sequência. Isso importa aqui — um `.emoji` no cabeçalho ou no rodapé da página **não** casa com `body > main > div.emoji-list > div > div.emoji`, e o `<script>` é neutralizado antes da varredura.
+
+Se o caminho estrito não casar nada, o script tenta `div.emoji-list > div > div.emoji` antes de desistir. Célula com texto junto do emoji (rótulo acessível, contador) tem só o primeiro cluster de emoji extraído.
+
 ## Estrutura
 
 ```
@@ -259,7 +320,11 @@ src/types.ts         # tipos públicos
 src/library.ts       # índice, normalização, resolução e busca
 src/server.ts        # API HTTP (node:http)
 test/library.test.ts # testes da biblioteca e da API
+data/canonical_labels.json # 243 rótulos canônicos de mensagem, por módulo
 scripts/scrape-emojidb.ts  # reconciliação da curadoria contra o emojidb
+scripts/html-select.ts     # seletor de caminho (A > B > C) sobre HTML, sem deps
+scripts/fill-emojis.ts     # preenche os emojis dos rótulos canônicos
+test/labels.test.ts  # testes do seletor, do preenchimento e do catálogo
 test/scraper.test.ts # testes do scraper (parser + pipeline sobre HTTP local)
 ```
 
