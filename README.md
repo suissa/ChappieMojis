@@ -223,6 +223,28 @@ Cada consulta é classificada:
 - Timeout de 15 s por requisição e `User-Agent` identificando o projeto.
 - Uma falha isolada não derruba o lote: vira um resultado `error`. O processo só sai com código `1` se mais de um terço das consultas falhar — o sinal de execução não confiável para o CI.
 
+### Conferindo os seletores contra uma página real
+
+`--fixture` roda **só o parser** contra um HTML salvo em disco, sem tocar a rede. É o jeito mais rápido de validar (ou consertar) os seletores:
+
+```bash
+curl https://emojidb.org/chart-emojis > /tmp/chart.html
+npm run scrape -- --fixture=/tmp/chart.html
+```
+
+```
+5 emojis extraidos de /tmp/chart.html, em ordem:
+   1. 📊  U+1F4CA
+   2. 📈  U+1F4C8
+   3. 📉  U+1F4C9
+   4. 🗃️  U+1F5C3 U+FE0F
+   5. 🧮  U+1F9EE
+
+Canonico proposto: 📊
+```
+
+Sai com código `1` e um aviso se nada for extraído — o sinal de que o markup mudou. Aceita `--top=<n>` e `--json`.
+
 ### Se o HTML do emojidb mudar
 
 O parser é tolerante de propósito: primeiro tenta os nós de resultado (`class="emoji"`) e, se nada casar, varre o documento inteiro já sem `<script>`, `<style>`, `<svg>` e `<head>`. Nos dois caminhos a ordem do documento é preservada, que é o que define o ranking. Se o layout mudar a ponto de quebrar, ajuste apenas as constantes `RESULT_NODE` e `NOISE_BLOCKS` no topo do arquivo — o resto do pipeline não depende do markup.

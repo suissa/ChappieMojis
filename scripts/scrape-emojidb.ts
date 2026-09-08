@@ -14,6 +14,8 @@
  *   node --experimental-strip-types scripts/scrape-emojidb.ts --key=entity.invoice
  *   node --experimental-strip-types scripts/scrape-emojidb.ts --query="fluxo de caixa"
  *
+ *   node --experimental-strip-types scripts/scrape-emojidb.ts --fixture=pagina.html
+ *
  * Flags: --delay=<ms> --limit=<n> --top=<n> --cache=<dir> --no-cache --json --write
  */
 
@@ -371,6 +373,7 @@ interface Options {
   top: number;
   key: string | null;
   query: string | null;
+  fixture: string | null;
 }
 
 export function parseArgs(argv: readonly string[]): Options {
@@ -396,12 +399,31 @@ export function parseArgs(argv: readonly string[]): Options {
     top: num("top", 10)!,
     key: value("key"),
     query: value("query"),
+    fixture: value("fixture"),
   };
 }
 
 async function main(argv: readonly string[]): Promise<number> {
   const opts = parseArgs(argv);
   const file = JSON.parse(readFileSync(DATA_PATH, "utf8")) as EmojiLibraryFile;
+
+  // `--fixture` roda só o parser contra um HTML salvo em disco, sem rede.
+  // Serve para conferir os seletores depois de uma mudança no site:
+  //   curl https://emojidb.org/chart-emojis > /tmp/chart.html
+  //   npm run scrape -- --fixture=/tmp/chart.html
+  if (opts.fixture) {
+    const emojis = extractEmojis(readFileSync(opts.fixture, "utf8"), opts.top);
+    if (opts.json) process.stdout.write(`${JSON.stringify(emojis)}\n`);
+    else if (emojis.length === 0) {
+      console.log(`Nenhum emoji extraido de ${opts.fixture}.`);
+      console.log("Os seletores RESULT_NODE/NOISE_BLOCKS provavelmente precisam de ajuste.");
+    } else {
+      console.log(`${emojis.length} emojis extraidos de ${opts.fixture}, em ordem:`);
+      console.log(emojis.map((e, i) => `  ${String(i + 1).padStart(2)}. ${e}  ${toCodepoints(e)}`).join("\n"));
+      console.log(`\nCanonico proposto: ${emojis[0]}`);
+    }
+    return emojis.length === 0 ? 1 : 0;
+  }
 
   // `--query` faz uma consulta avulsa, sem precisar existir na biblioteca.
   let entries: EmojiEntry[] = opts.query
