@@ -11,8 +11,10 @@
     "build": "tsc -p tsconfig.json",
     "start": "node dist/server.js",
     "dev": "node --experimental-strip-types src/server.ts",
-    "test": "node --experimental-strip-types --test test/",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "scrape": "node --experimental-strip-types scripts/scrape-emojidb.ts",
+    "scrape:write": "node --experimental-strip-types scripts/scrape-emojidb.ts --write"
   },
   "license": "MIT"
 }

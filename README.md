@@ -183,6 +183,52 @@ Todos os exemplos abaixo são de sistemas de **gestão comercial** e **gestão p
 | `entity.education` | 🎓 | Plano de desenvolvimento do colaborador: `🎓 Curso de gestão de estoque — 60% concluído`. |
 | `entity.subscription` | 🔁 | Assinaturas recorrentes: `🔁 Plano do sistema de gestão — R$ 149/mês, renova dia 12`. |
 
+## Reconciliação com o emojidb (scraper)
+
+`scripts/scrape-emojidb.ts` refaz a curadoria contra a fonte: para cada chave da biblioteca ele consulta `https://emojidb.org/<slug>-emojis`, trata o **primeiro resultado como o emoji canônico** daquela consulta e compara com o que já está no JSON.
+
+```bash
+npm run scrape                    # relatório, não altera nada
+npm run scrape -- --key=entity.invoice
+npm run scrape -- --query="fluxo de caixa"   # consulta avulsa, fora da biblioteca
+npm run scrape -- --json > relatorio.json
+npm run scrape:write              # aplica as divergências no data/emojis.json
+```
+
+Cada consulta é classificada:
+
+| Status | Significado |
+| :---: | --- |
+| `=` `match` | o topo do emojidb é o que já está na biblioteca |
+| `~` `diff` | o topo diverge, mas o emoji atual aparece no top-N (o relatório mostra em que posição) |
+| `!` `absent` | o emoji atual nem aparece no ranking — o caso que mais merece revisão manual |
+| `?` `empty` | a consulta não devolveu emoji nenhum |
+| `x` `error` | falha de rede ou página inexistente |
+
+```
+~ entity.stock            atual 🏬  -> emojidb 📦  (atual em #2)
+    top: 📦 🏬 🗄️ 📥 🏭
+    https://emojidb.org/stock-emojis
+
+77 consultas: 61 iguais, 12 divergentes, 2 sem o atual no ranking, 0 vazias, 2 com erro.
+```
+
+`--write` só altera entradas `diff` e `absent`, atualizando `emoji` e `codepoint` — `empty` e `error` são incertezas, não decisões. **Revise o diff antes de commitar**: o topo do emojidb é um bom palpite, não um veredito; em alguns casos a escolha atual é deliberadamente melhor para o contexto de gestão comercial.
+
+### Comportamento de rede
+
+- **1,5 s entre requisições** por padrão (`--delay=<ms>`), em série. O emojidb é um site pequeno; não o martele.
+- **Cache em disco** em `.cache/emojidb/` (ignorado pelo git): reexecuções não tocam a rede. Use `--no-cache` ou `--cache=<dir>` para mudar.
+- **Retentativa com backoff exponencial** (1s, 2s, 4s) em erro de rede, `429` e `5xx`; `404` é definitivo e não insiste.
+- Timeout de 15 s por requisição e `User-Agent` identificando o projeto.
+- Uma falha isolada não derruba o lote: vira um resultado `error`. O processo só sai com código `1` se mais de um terço das consultas falhar — o sinal de execução não confiável para o CI.
+
+### Se o HTML do emojidb mudar
+
+O parser é tolerante de propósito: primeiro tenta os nós de resultado (`class="emoji"`) e, se nada casar, varre o documento inteiro já sem `<script>`, `<style>`, `<svg>` e `<head>`. Nos dois caminhos a ordem do documento é preservada, que é o que define o ranking. Se o layout mudar a ponto de quebrar, ajuste apenas as constantes `RESULT_NODE` e `NOISE_BLOCKS` no topo do arquivo — o resto do pipeline não depende do markup.
+
+Os testes cobrem o parser com HTML sintético (sequências ZWJ, tons de pele, bandeiras, keycaps, entidades HTML, markup alterado) e o pipeline de ponta a ponta contra um servidor HTTP local, incluindo `404`, retentativa em `503` e cache. Nada disso exige acesso ao emojidb.
+
 ## Estrutura
 
 ```
@@ -190,7 +236,9 @@ data/emojis.json     # a biblioteca: chave semântica -> emoji canônico
 src/types.ts         # tipos públicos
 src/library.ts       # índice, normalização, resolução e busca
 src/server.ts        # API HTTP (node:http)
-test/library.test.ts # testes com node:test
+test/library.test.ts # testes da biblioteca e da API
+scripts/scrape-emojidb.ts  # reconciliação da curadoria contra o emojidb
+test/scraper.test.ts # testes do scraper (parser + pipeline sobre HTTP local)
 ```
 
 ## Licença
